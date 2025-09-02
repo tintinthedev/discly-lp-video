@@ -49,7 +49,12 @@ export default makeScene2D(function* (view) {
         radius={10}
       >
         {featureData.features.map((feature) => (
-          <Txt fill={"#ccc"} alignSelf={"start"}>
+          <Txt
+            fill={"#ddd"}
+            alignSelf={"start"}
+            fontFamily={"Jetbrains Mono"}
+            fontSize={35}
+          >
             {feature}
           </Txt>
         ))}
