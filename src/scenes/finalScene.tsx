@@ -1,5 +1,5 @@
 import { makeScene2D, Path, Rect, Txt } from "@motion-canvas/2d";
-import { all, chain, createRef, waitFor } from "@motion-canvas/core";
+import { all, chain, createRef, waitFor, waitUntil } from "@motion-canvas/core";
 
 export default makeScene2D(function* (view) {
   view.fill("#5865F2");
@@ -19,5 +19,5 @@ export default makeScene2D(function* (view) {
 
   yield* all(text().opacity(1, 0.4), text().y(0, 0.4));
 
-  yield* waitFor(2);
+  yield* waitUntil("final");
 });
