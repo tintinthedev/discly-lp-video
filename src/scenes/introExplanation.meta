@@ -1,5 +1,26 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "showDiscly",
+      "targetTime": 1.6166047031976656
+    },
+    {
+      "name": "showAI",
+      "targetTime": 3.659727374431801
+    },
+    {
+      "name": "discord-talk",
+      "targetTime": 5.914993789957694
+    },
+    {
+      "name": "idk-discord",
+      "targetTime": 10.354275068498906
+    },
+    {
+      "name": "end-idk-discord",
+      "targetTime": 15.644981369873076
+    }
+  ],
   "seed": 676297978
 }

@@ -3,17 +3,47 @@ import ChatGPT from "../images/chatgpt-logo.webp";
 import Discly from "../images/discly-logo.png";
 import Discord from "../images/discord-logo.jpg";
 import { showImage } from "../helpers/showImage";
-import { all, createRef, Vector2, waitFor } from "@motion-canvas/core";
+import {
+  all,
+  createRef,
+  useDuration,
+  Vector2,
+  waitFor,
+  waitUntil,
+} from "@motion-canvas/core";
 
 export default makeScene2D(function* (view) {
   const textA = createRef<Txt>();
   const textB = createRef<Txt>();
 
+  yield* waitUntil("showDiscly");
+
+  const discly = yield* showImage(
+    view,
+    Discly,
+    new Vector2(200, 200),
+    new Vector2(-200, 0)
+  );
+
+  view.add(
+    <Txt
+      ref={textB}
+      bottom={discly().top().sub([0, 40])}
+      opacity={0}
+      fill={"white"}
+      fontFamily={"Jetbrains Mono"}
+    >
+      Bot
+    </Txt>
+  );
+
+  yield* waitUntil("showAI");
+
   const chatGpt = yield* showImage(
     view,
     ChatGPT,
     new Vector2(200, 200),
-    new Vector2(-200, 0),
+    new Vector2(200, 0),
     30
   );
 
@@ -26,25 +56,6 @@ export default makeScene2D(function* (view) {
       fontFamily={"Jetbrains Mono"}
     >
       IA
-    </Txt>
-  );
-
-  const discly = yield* showImage(
-    view,
-    Discly,
-    new Vector2(200, 200),
-    new Vector2(200, 0)
-  );
-
-  view.add(
-    <Txt
-      ref={textB}
-      bottom={discly().top().sub([0, 40])}
-      opacity={0}
-      fill={"white"}
-      fontFamily={"Jetbrains Mono"}
-    >
-      Bot
     </Txt>
   );
 
@@ -66,6 +77,8 @@ export default makeScene2D(function* (view) {
   );
 
   yield* all(plus().opacity(1, 0.3), plus().y(0, 0.3));
+
+  yield* waitUntil("discord-talk");
 
   yield* all(
     plus().opacity(0, 1),
@@ -99,10 +112,14 @@ export default makeScene2D(function* (view) {
     </>
   );
 
+  yield* waitUntil("idk-discord");
+
+  const endIdkDiscordDur = useDuration("end-idk-discord");
+
   yield* all(
-    discord().filters.grayscale(1, 0.5),
-    lineA().end(1, 0.5),
-    lineB().end(1, 0.5)
+    discord().filters.grayscale(1, endIdkDiscordDur),
+    lineA().end(1, endIdkDiscordDur),
+    lineB().end(1, endIdkDiscordDur)
   );
 
   yield* all(
