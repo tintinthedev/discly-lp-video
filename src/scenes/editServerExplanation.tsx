@@ -1,5 +1,11 @@
 import { Circle, Layout, makeScene2D, Rect, Txt } from "@motion-canvas/2d";
-import { createRef, makeRef, sequence, waitFor } from "@motion-canvas/core";
+import {
+  createRef,
+  makeRef,
+  sequence,
+  waitFor,
+  waitUntil,
+} from "@motion-canvas/core";
 
 const editServerFeatures = [
   "Criar, modificar e remover cargos",
@@ -70,13 +76,15 @@ export default makeScene2D(function* (view) {
     layout().add(box);
   });
 
+  yield* waitUntil("show-boxes");
+
   yield* sequence(0.2, ...boxes.map((box) => box.opacity(1, 0.5)));
 
   const circle = createRef<Circle>();
 
   view.add(<Circle ref={circle} fill={"#5865F2"} />);
 
-  yield* waitFor(2);
+  yield* waitUntil("comamnds-end");
 
   yield* circle().size(4000, 1);
 });
