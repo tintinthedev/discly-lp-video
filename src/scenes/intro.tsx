@@ -5,6 +5,7 @@ import {
   sequence,
   Vector2,
   waitFor,
+  waitUntil,
 } from "@motion-canvas/core";
 import DisclyLogo from "../images/discly-logo.png";
 import { showImage } from "../helpers/showImage";
@@ -37,7 +38,7 @@ export default makeScene2D(function* (view) {
 
   yield* textA().opacity(1, 0.3);
 
-  yield* all(logoImage().y(-200, 1));
+  yield* all(logoImage().y(-200, 2));
 
   const featuresBox = createRef<Rect>();
   view.add(
@@ -91,8 +92,12 @@ export default makeScene2D(function* (view) {
       </>
     );
 
+  yield* waitUntil("showBox");
+
   yield* sequence(0.3, arrow().end(1, 1), featuresBox().opacity(1, 1));
   yield* waitFor(1);
+
+  yield* waitUntil("showLastText");
   yield* lastBoxText().scale(1, 0.5);
 
   yield* waitFor(2);

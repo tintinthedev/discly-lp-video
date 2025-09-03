@@ -1,5 +1,14 @@
 {
   "version": 0,
-  "timeEvents": [],
+  "timeEvents": [
+    {
+      "name": "showBox",
+      "targetTime": 4.863568767124726
+    },
+    {
+      "name": "showLastText",
+      "targetTime": 10.396778173520058
+    }
+  ],
   "seed": 3330661250
 }
