@@ -5,7 +5,7 @@ import introExplanation from "./scenes/introExplanation?scene";
 import screenVideo from "./scenes/screenVideo?scene";
 import editServerExplanation from "./scenes/editServerExplanation?scene";
 import finalScene from "./scenes/finalScene?scene";
-import MultiTrack from "motion-canvas-multitrack/editor-plugin";
+import audio from "../audio/audio todo porra sla.mp3";
 import "./global.css";
 
 export default makeProject({
@@ -16,6 +16,5 @@ export default makeProject({
     editServerExplanation,
     finalScene,
   ],
-  plugins: [MultiTrack()],
-  experimentalFeatures: true,
+  audio,
 });

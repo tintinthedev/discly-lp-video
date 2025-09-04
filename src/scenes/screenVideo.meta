@@ -2,60 +2,12 @@
   "version": 0,
   "timeEvents": [
     {
-      "name": "login",
-      "targetTime": 2.2430539091092725
-    },
-    {
-      "name": "add",
-      "targetTime": 3.6177445353800586
-    },
-    {
-      "name": "add2",
-      "targetTime": 8.755218203537524
-    },
-    {
-      "name": "add3",
-      "targetTime": 15.469740646603377
-    },
-    {
-      "name": "invite",
-      "targetTime": 17.757459510979018
-    },
-    {
-      "name": "admin",
-      "targetTime": 22.56292291073472
-    },
-    {
       "name": "prompt",
-      "targetTime": 31.961195023381514
-    },
-    {
-      "name": "command1",
-      "targetTime": 36.73464815473545
-    },
-    {
-      "name": "server-creation",
-      "targetTime": 48.51819194155625
-    },
-    {
-      "name": "channel-roles",
-      "targetTime": 70.06177262527031
-    },
-    {
-      "name": "edit-server",
-      "targetTime": 76.01835178213074
-    },
-    {
-      "name": "finish-typing",
-      "targetTime": 83.21106459057432
-    },
-    {
-      "name": "emojis",
-      "targetTime": 87.61344327005999
+      "targetTime": 62.78782953570715
     },
     {
       "name": "video-end",
-      "targetTime": 90.5826994355944
+      "targetTime": 187.9094795123068
     }
   ],
   "seed": 3133373958
