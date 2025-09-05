@@ -6,8 +6,12 @@
       "targetTime": 62.78782953570715
     },
     {
+      "name": "cargos-to-canais",
+      "targetTime": 139.02849394601338
+    },
+    {
       "name": "video-end",
-      "targetTime": 187.9094795123068
+      "targetTime": 186.34661588359316
     }
   ],
   "seed": 3133373958

@@ -62,6 +62,31 @@ export default makeScene2D(function* (view) {
     video().filters.brightness(1, 0.4)
   );
 
+  yield* waitUntil("cargos-to-canais");
+
+  const textB = createRef<Txt>();
+
+  view.add(
+    <Txt
+      ref={textB}
+      fill={"white"}
+      fontFamily={"Jetbrains Mono"}
+      y={50}
+      x={-500}
+      opacity={0}
+    >
+      Canais*
+    </Txt>
+  );
+
+  yield* all(textB().opacity(1, 0.5), textB().y(0, 0.5));
+
+  yield* waitFor(1);
+
+  yield* all(textB().opacity(0, 0.5), textB().y(50, 0.5));
+
+  textB().remove();
+
   yield* waitUntil("video-end");
 
   yield* all(
